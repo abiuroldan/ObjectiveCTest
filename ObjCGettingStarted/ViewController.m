@@ -24,11 +24,16 @@ NSString *cellID = @"cellID";
     // Do any additional setup after loading the view, typically from a nib.
     
 //    [self setupCourses];
+    [self setupTableView];
     [self fetchCoursesUsingJSON];
     
     self.navigationItem.title = @"Courses";
     self.navigationController.navigationBar.prefersLargeTitles = YES;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
+}
+
+- (void)setupTableView{
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (void)fetchCoursesUsingJSON{
